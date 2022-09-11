@@ -4,9 +4,9 @@
 location=$(curl -s "https://api.github.com/repos/Pryaxis/TShock/releases/latest" \
 | grep "browser_download_url" \
 | awk '{print substr($2, 2, length($2)-2)}')
-wget -O tshock.zip $location -P /terraria-sesrver
+wget -O tshock.zip $location -P /staging
 
-# extacts linux server files
-unzip /terraria-sesrver/tshock.zip && \
-rm -rf /terraria-sesrver/tshock.zip
-
+# extacts server files
+mkdir /terraria-sesrver && \
+unzip /staging/tshock.zip -d /terraria-sesrver && \
+rm -rf /staging
