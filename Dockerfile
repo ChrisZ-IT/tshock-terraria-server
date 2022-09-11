@@ -39,7 +39,7 @@ RUN chown -R $TERRARIA_USER_NAME /terraria-sesrver && \
 #VOLUME ["/terraria-sesrver/world"]
 
 #Set working directory to server
-WORKDIR /terraria
+WORKDIR /terraria-sesrver
 
 # Sets default user
 USER terraria
