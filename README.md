@@ -1,3 +1,6 @@
+# About
+What I tired different than the other terraria docker images out there. This will automatically pull the latest version of Tshock when you build the new docker image.
+
 # Build new base image(first time or when new version comes out)
 sudo docker build --tag terraria-tshock --file Dockerfile .
 
