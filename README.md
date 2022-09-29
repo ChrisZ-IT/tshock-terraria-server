@@ -14,7 +14,7 @@ sudo docker ps -a
 sudo docker start <container id>
 
 
-TODO:
+# TODO:
 
     Better documentation.
     Better way to pass in variables from the docker run (ie world name, world location, world size on auto creation, player count..etc)
