@@ -31,7 +31,7 @@ RUN adduser --system --group $TERRARIA_USER_NAME
 # Sets permissions on required TS server files
 RUN chown -R $TERRARIA_USER_NAME /terraria-sesrver && \
     chown    $TERRARIA_USER_NAME /usr/local/bin/start.sh && \
-    chmod 700 /terraria-sesrver/TerrariaServer.exe && \
+    chmod 500 /terraria-sesrver/TerrariaServer.exe && \
     chmod -R u+rw /terraria-sesrver/ && \
     chmod 500 /usr/local/bin/start.sh
 

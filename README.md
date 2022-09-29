@@ -1,26 +1,23 @@
-# About
-What I tired different than the other terraria docker images out there. This will automatically pull the latest version of Tshock when you build the new docker image.
+# tshock-terraria-Server
+<i>this is a work in progress as I learn docker. So please forgive my sloppyness
 
-# Build new base image(first time or when new version comes out)
+Building a new docker image will download the latest version of the tshock server zip file from https://github.com/Pryaxis/TShock/releases </i>
+
+# Build command:
 sudo docker build --tag terraria-tshock --file Dockerfile .
 
-# Start container
+# Run container in interactive mode.
+Run in interactive mode the first time so you can setup your local in game admin user account.
 
-  # interactive mode (Run this one on first boot to setup in game user account)
-  sudo docker run -it -p 7777:7777 --memory=2048m --mount type=volume,src=terraria,dst=/home/terraria/.local/share/Terraria --name="terraria-vanilla" terraria-tshock:latest
+sudo docker run -it -p 7777:7777 --memory=2048m --mount type=volume,src=terraria,dst=/home/terraria/.local/share/Terraria --name="terraria" terraria-tshock
 
-  # non interactive mode
-  sudo docker run -p 7777:7777 --memory=2048m --mount type=volume,src=terraria,dst=/home/terraria/.local/share/Terraria --name="terraria-vanilla" terraria-tshock:latest
-
-# Restart container
+# Restart this container if it is stopped
 sudo docker ps -a
-sudo docker start <container id>
-
+sudo docker start <container−id>
 
 # TODO:
-
-    Better documentation.
-    Better way to pass in variables from the docker run (ie world name, world location, world size on auto creation, player count..etc)
-    Get image pushed to docker hub (don't currently have an account there yet)
+1. Better documentation.
+2. Better way to pass in variables from the docker run (ie world name, world location, world size on auto creation, player count..etc)
+3. Get image pushed to docker hub (don't currently have an account there yet)
 
 Special thanks to a few of the other people who have already solved this 'problem' in docker. looking at their Dockerfiles helped me out a lot; I mostly looked at https://github.com/JoshuaTheMiller/Vanilla-Terraria
